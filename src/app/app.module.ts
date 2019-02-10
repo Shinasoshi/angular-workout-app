@@ -11,6 +11,8 @@ import { AuthModule} from "../auth/auth.module";
 import { AppComponent } from './containers/app/app.component';
 
 // components
+import {AppNavComponent} from "./components/app-nav/app-nav.component";
+import {AppHeaderComponent} from "./components/app-header/app-header.component";
 
 // routes
 export const ROUTES: Routes = [];
@@ -22,7 +24,9 @@ export const ROUTES: Routes = [];
     AuthModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavComponent,
+    AppHeaderComponent
   ],
   providers: [
     Store
