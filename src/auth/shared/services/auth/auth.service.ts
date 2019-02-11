@@ -13,7 +13,7 @@ export interface User {
 export class AuthService {
 
   auth$ = this.af.authState.do(next => {
-    if (!next){
+    if (!next) {
       this.store.set('user', null);
       return;
     }
@@ -31,7 +31,11 @@ export class AuthService {
   ) {
   }
 
-  get authState(){
+  get user() {
+    return this.af.auth.currentUser;
+  }
+
+  get authState() {
     return this.af.authState;
   }
 
@@ -39,11 +43,11 @@ export class AuthService {
     return this.af.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  loginUser(email: string, password: string){
+  loginUser(email: string, password: string) {
     return this.af.auth.signInWithEmailAndPassword(email, password);
   }
 
-  logoutUser(){
+  logoutUser() {
     return this.af.auth.signOut();
   }
 }
