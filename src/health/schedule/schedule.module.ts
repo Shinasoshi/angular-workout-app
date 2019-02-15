@@ -3,6 +3,12 @@ import {CommonModule} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import {ScheduleComponent} from "./containers/schedule/schedule.component";
+import {ScheduleCalendarComponent} from "./components/schedule-calendar/schedule-calendar.component";
+import {ScheduleControlsComponent} from "./components/schedule-controls/schedule-controls.component";
+import {ScheduleDaysComponent} from "./components/schedule-days/schedule-days.component";
+import {ScheduleSectionComponent} from "./components/schedule-section/schedule-section.component";
+import {SharedModule} from "../shared/shared.module";
+import {ScheduleAssignComponent} from "./components/schedule-assign/schedule-assign.component";
 
 
 export const ROUTES: Routes = [
@@ -13,10 +19,16 @@ export const ROUTES: Routes = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(ROUTES)
+    RouterModule.forChild(ROUTES),
+    SharedModule
   ],
   declarations: [
-    ScheduleComponent
+    ScheduleComponent,
+    ScheduleCalendarComponent,
+    ScheduleControlsComponent,
+    ScheduleDaysComponent,
+    ScheduleSectionComponent,
+    ScheduleAssignComponent
   ],
   providers: []
 })
